@@ -6,11 +6,15 @@ class ChatsController < ApplicationController
     @channels = SlackChannel.all
   end
 
-  def new
+  def new_message
     # Form to type a new message to a given slack channel
+    @channel = SlackChannel.new(params[:channel])
   end
 
-  def create
+  def send_message
     # Handle the result of the above form
+    channel = SlackChannel.new(params[:channel])
+    channel.send(params[:message])
+    redirect_to chats_path
   end
 end
