@@ -8,7 +8,7 @@ class SlackChannel
 
   attr_reader :name
 
-  def initialize(data)
+  def initialize(name)
     @name = name
   end
 
@@ -20,7 +20,7 @@ class SlackChannel
       "text" => message,
       "username" => "Beyonce",
       "icon_emoji" => ":information_desk_person:",
-      "as_user" => false
+      "as_user" => "false"
     }
 
     url = "#{BASE_URL}chat.postMessage"

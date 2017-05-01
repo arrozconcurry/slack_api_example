@@ -1,6 +1,9 @@
+require 'slack_channel'
+
 class ChatsController < ApplicationController
   def index
     # list all the slack channels
+    @channels = SlackChannel.all
   end
 
   def new
