@@ -18,8 +18,8 @@ class SlackChannel
       "token" => ENV["SLACK_API_TOKEN"],
       "channel" => @name,
       "text" => message,
-      "username" => "Beyonce",
-      "icon_emoji" => ":information_desk_person:",
+      "username" => "Heart Attack Jack",
+      "icon_emoji" => ":fries:",
       "as_user" => "false"
     }
 
