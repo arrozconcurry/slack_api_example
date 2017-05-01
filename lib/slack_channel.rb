@@ -15,7 +15,7 @@ class SlackChannel
   def send(message)
 
     query_params = {
-      "token" => TOKEN,
+      "token" => ENV["SLACK_API_TOKEN"],
       "channel" => @name,
       "text" => message,
       "username" => "Beyonce",
@@ -34,7 +34,7 @@ class SlackChannel
   end
 
   def self.all
-    url = "#{BASE_URL}channels.list?token=#{TOKEN}"
+    url = "#{BASE_URL}channels.list?token=#{ENV["SLACK_API_TOKEN"]}"
     response = HTTParty.get(url).parsed_response
 
     if response["ok"]
