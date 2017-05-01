@@ -39,12 +39,12 @@ class SlackChannel
 
     if response["ok"]
       channel_list = response["channels"].map do |channel_data|
-        self.new(channel_data)
+        self.new(channel_data["name"])
       end
 
       return channel_list
     else
-      puts "Oh no there was an error: #{response["error"]}"
+      raise SlackException.new(response["error"])
     end
   end
 end
